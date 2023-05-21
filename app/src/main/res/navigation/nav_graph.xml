@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/DrawingListFragment">
+
+    <fragment
+        android:id="@+id/DrawingListFragment"
+        android:name="com.example.doda.DrawingListFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_drawing_list">
+
+        <action
+            android:id="@+id/action_DrawingListFragment_to_AddDrawingFragment"
+            app:destination="@id/AddDrawingFragment" />
+        <action
+            android:id="@+id/action_DrawingListFragment_to_drawingFragment"
+            app:destination="@id/drawingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddDrawingFragment"
+        android:name="com.example.doda.AddDrawingFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_add_drawing">
+
+        <action
+            android:id="@+id/action_AddDrawingFragment_to_DrawingListFragment"
+            app:destination="@id/DrawingListFragment" />
+        <action
+            android:id="@+id/action_AddDrawingFragment_to_drawingFragment"
+            app:destination="@id/drawingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/drawingFragment"
+        android:name="com.example.doda.DrawingFragment"
+        android:label="fragment_drawing"
+        tools:layout="@layout/fragment_drawing" >
+        <action
+            android:id="@+id/action_drawingFragment_to_DrawingListFragment"
+            app:destination="@id/DrawingListFragment" />
+    </fragment>
+</navigation>
